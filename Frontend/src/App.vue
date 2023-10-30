@@ -91,7 +91,6 @@ let color = [
 const formatDate = (rawDate) => {
   const date = new Date(rawDate);
   
-  // Specify the timeZone as Asia/Bangkok and the desired date format
   const options = {
     timeZone: 'Asia/Bangkok',
     day: '2-digit',
@@ -99,7 +98,6 @@ const formatDate = (rawDate) => {
     year: 'numeric'
   };
 
-  // Use Intl.DateTimeFormat to format the date with the specified timeZone and format
   const thaiDateFormatter = new Intl.DateTimeFormat(undefined, options);
   return thaiDateFormatter.format(date);
 };
@@ -124,7 +122,7 @@ const start = () => {
   play.value = false
   game.value = true
   end.value = false
-  hasPosted.value = false; // เพิ่มบรรทัดนี้
+  hasPosted.value = false; 
 }
 
 
@@ -295,7 +293,6 @@ const addPlayer = async (playerName, playerScore) => {
     });
 
     if (res.status === 201) {
-      // ทำอะไรสักอย่างเมื่อ POST สำเร็จ
       console.log("Player data added successfully");
     } else {
       console.error("Failed to add player data. Server returned status:", res.status);
@@ -312,7 +309,6 @@ const showScore = () => {
 }
 
 const hideScoreBoard = () => {
-  // ปิดสี่เหลี่ยม Score Board โดยกำหนดค่าให้ isScoreBoardVisible เป็น false
   isScoreBoardVisible.value = false;
 }
 </script>
@@ -516,7 +512,6 @@ const hideScoreBoard = () => {
 </template>
  
 <style scoped>
-/* สร้างสไตล์สำหรับสี่เหลี่ยม Pop-up  */
 .score-board-popup {
   position: fixed;
   top: 0;
@@ -530,7 +525,6 @@ const hideScoreBoard = () => {
   z-index: 999;
 }
 
-/* สร้างสไตล์สำหรับเนื้อหาของ Score Board  */
 .score-board-content {
   background-color: #fff;
   padding: 20px;
@@ -538,7 +532,6 @@ const hideScoreBoard = () => {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* สร้างสไตล์สำหรับปุ่มปิด */
 .close-button {
   background-color: #AC9C48;
   color: white;
