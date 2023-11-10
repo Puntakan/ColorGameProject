@@ -9,7 +9,7 @@ RUN mvn clean install
 # Package stage
 #
 FROM openjdk:17-jdk-alpine
-COPY --from=build /target/*.jar
+COPY --from=build /target/player-0.0.1-SNAPSHOT.jar player.jar
 # ENV PORT=8080
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+ENTRYPOINT ["java","-jar","player.jar"]
